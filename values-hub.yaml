@@ -19,7 +19,6 @@ clusterGroup:
       name: metallb-operator
       namespace: metallb-system
       channel: stable
-      csv: 4.18.0-202504021503
       installPlanApproval: Manual
   projects:
     - hub
