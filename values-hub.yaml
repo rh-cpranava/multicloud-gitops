@@ -55,6 +55,8 @@ clusterGroup:
       repoURL: https://github.com/fwalker-redhat/validated-patterns-acm-chart
       chartRevision: FEATURE-Add_cluster_backup_option
       path: "."
+      extraValueFiles:
+        - "/overrides/acm/pw.yaml"
       ignoreDifferences:
         - group: internal.open-cluster-management.io
           kind: ManagedClusterInfo
