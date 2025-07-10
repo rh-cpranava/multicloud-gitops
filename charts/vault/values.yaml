@@ -40,10 +40,6 @@ vault:
                tls_key_file = "/vault/userconfig/vault-secret/tls.key"
             }
             service_registration "kubernetes" {}
-            storage "file" {
-              path = "/vault/data"
-            }
-
     # -- Extra volumes that are automatically mounted in the vault pod under /vault/userconfig/<name>
     extraVolumes:
     - type: secret
