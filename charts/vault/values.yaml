@@ -20,7 +20,7 @@ vault:
     # -- Additional environment variables injected in the vault pod
     extraEnvironmentVars:
       VAULT_CACERT: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
-      VAULT_ADDR: https://vault.vault.svc.cluster.local:8200
+      VAULT_ADDR: http://vault.vault.svc.cluster.local:8200
     # -- Base configuration for the standalone vault server
     ha:
       enabled: true 
