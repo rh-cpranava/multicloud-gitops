@@ -16,6 +16,9 @@ vault:
   ui:
     # -- Vault UI support
     enabled: true
+    extraEnvironmentVars:
+      VAULT_CACERT: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
+      VAULT_ADDR: https://vault-active.vault.svc.cluster.local:8200
   server:
     # -- Additional environment variables injected in the vault pod
     # -- Base configuration for the standalone vault server
