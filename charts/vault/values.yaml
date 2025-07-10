@@ -36,8 +36,8 @@ vault:
             listener "tcp" {
                address = "[::]:8200"
                cluster_address = "[::]:8201"
-               tls_cert_file = "/vault/userconfig/vault-secret-active/tls.crt"
-               tls_key_file = "/vault/userconfig/vault-secret-active/tls.key"
+               tls_cert_file = "/vault/userconfig/vault-secret/tls.crt"
+               tls_key_file = "/vault/userconfig/vault-secret/tls.key"
             }
     # -- Extra volumes that are automatically mounted in the vault pod under /vault/userconfig/<name>
     extraVolumes:
@@ -62,7 +62,6 @@ vault:
         annotations:
           service.beta.openshift.io/serving-cert-secret-name: vault-secret-internal
     route:
-      activeService: true
       host: null
       # -- Enable route support when exposing the vault
       enabled: true
