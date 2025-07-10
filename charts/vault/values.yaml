@@ -28,6 +28,7 @@ vault:
     extraEnvironmentVars:
       VAULT_CACERT: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
       VAULT_ADDR: https://127.0.0.1:8200
+      VAULT_SKIP_VERIFY=true
     ha:
       enabled: true
       replicas: 3
