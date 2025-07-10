@@ -74,12 +74,6 @@ vault:
     extraVolumes:
     - type: secret
       name: vault-secret
-    - type: secret
-      name: vault-0-secret
-    - type: secret
-      name: vault-1-secret
-    - type: secret
-      name: vault-2-secret
 
     service:
       # -- Enables an associated k8s service when running the vault
