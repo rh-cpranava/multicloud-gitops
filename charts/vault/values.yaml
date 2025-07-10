@@ -23,7 +23,7 @@ vault:
     # -- Base configuration for the standalone vault server
     extraEnvironmentVars:
       VAULT_CACERT: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
-      VAULT_ADDR: http://vault.vault.svc.cluster.local:8200
+      VAULT_ADDR: http://vault-0.vault.svc.cluster.local:8200
     ha:
       enabled: true
       replicas: 3
