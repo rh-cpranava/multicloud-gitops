@@ -15,7 +15,7 @@ clusterGroup:
     acm:
       name: advanced-cluster-management
       namespace: open-cluster-management
-      channel: release-2.11
+      channel: release-2.14
     metallb-operator:
       name: metallb-operator
       namespace: metallb-system
@@ -66,8 +66,7 @@ clusterGroup:
       name: vault
       namespace: vault
       project: hub
-      chart: hashicorp-vault
-      chartVersion: 0.1.*
+      path: charts/vault
     golang-external-secrets:
       name: golang-external-secrets
       namespace: golang-external-secrets
