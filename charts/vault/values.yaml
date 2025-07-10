@@ -47,23 +47,23 @@ vault:
           storage "raft" {
             path = "/vault/data"
             retry_join {
-              leader_api_addr = "https://vault-0.vault.svc:8200"
-              leader_client_cert_file = "/vault/userconfig/vault-0-secret/tls.crt"
-              leader_client_key_file = "/vault/userconfig/vault-0-secret/tls.key"
+              leader_api_addr = "https://vault-0.vault-internal:8200"
+              leader_client_cert_file = "/vault/userconfig/vault-secret/tls.crt"
+              leader_client_key_file = "/vault/userconfig/vault-secret/tls.key"
               tls_client_ca_file = "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt" 
               leader_tls_servername = "vault.vault.svc.cluster.local"
             }
             retry_join {
-              leader_api_addr = "https://vault-1.vault.svc:8200"
-              leader_client_cert_file = "/vault/userconfig/vault-1-secret/tls.crt"
-              leader_client_key_file = "/vault/userconfig/vault-1-secret/tls.key"
+              leader_api_addr = "https://vault-1.vault-internal:8200"
+              leader_client_cert_file = "/vault/userconfig/vault-secret/tls.crt"
+              leader_client_key_file = "/vault/userconfig/vault-secret/tls.key"
               tls_client_ca_file = "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt" 
               leader_tls_servername = "vault.vault.svc.cluster.local"
             }
             retry_join {
-              leader_api_addr = "https://vault-2.vault.svc:8200"
-              leader_client_cert_file = "/vault/userconfig/vault-2-secret/tls.crt"
-              leader_client_key_file = "/vault/userconfig/vault-2-secret/tls.key"
+              leader_api_addr = "https://vault-2.vault-internal:8200"
+              leader_client_cert_file = "/vault/userconfig/vault-secret/tls.crt"
+              leader_client_key_file = "/vault/userconfig/vault-secret/tls.key"
               tls_client_ca_file = "/var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt" 
               leader_tls_servername = "vault.vault.svc.cluster.local"
             }
@@ -88,15 +88,6 @@ vault:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
           service.beta.openshift.io/serving-cert-secret-name: vault-active-secret
-      vault-0:
-        annotations:
-          service.beta.openshift.io/serving-cert-secret-name: vault-0-secret
-      vault-1:
-        annotations:
-          service.beta.openshift.io/serving-cert-secret-name: vault-1-secret
-      vault-2:
-        annotations:
-          service.beta.openshift.io/serving-cert-secret-name: vault-2-secret
       nonha:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
