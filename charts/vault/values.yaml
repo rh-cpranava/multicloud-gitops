@@ -52,11 +52,16 @@ vault:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
           service.beta.openshift.io/serving-cert-secret-name: vault-secret
+      nonha:
+        # -- Annotation to inject a secret called `vault-secret` to the nonha service
+        annotations:
+          service.beta.openshift.io/serving-cert-secret-name: vault-secret
       internal:
         # -- Annotation to inject a secret called `vault-secret` to the internal service
         annotations:
           service.beta.openshift.io/serving-cert-secret-name: vault-secret-internal
     route:
+      activeService: true
       host: null
       # -- Enable route support when exposing the vault
       enabled: true
