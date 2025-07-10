@@ -36,14 +36,15 @@ vault:
             listener "tcp" {
                address = "[::]:8200"
                cluster_address = "[::]:8201"
-               tls_cert_file = "/vault/userconfig/vault-secret/tls.crt"
-               tls_key_file = "/vault/userconfig/vault-secret/tls.key"
+               tls_cert_file = "/vault/userconfig/vault-secret-active/tls.crt"
+               tls_key_file = "/vault/userconfig/vault-secret-active/tls.key"
             }
-            service_registration "kubernetes" {}
     # -- Extra volumes that are automatically mounted in the vault pod under /vault/userconfig/<name>
     extraVolumes:
     - type: secret
       name: vault-secret
+    - type: secret
+      name: vault-secret-active
 
     service:
       # -- Enables an associated k8s service when running the vault
@@ -51,7 +52,7 @@ vault:
       active:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
-          service.beta.openshift.io/serving-cert-secret-name: vault-secret
+          service.beta.openshift.io/serving-cert-secret-name: vault-secret-active
       nonha:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
