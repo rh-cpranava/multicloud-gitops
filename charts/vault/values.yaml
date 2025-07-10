@@ -36,8 +36,7 @@ vault:
             listener "tcp" {
                address = "[::]:8200"
                cluster_address = "[::]:8201"
-               tls_cert_file = "/vault/userconfig/vault-secret/tls.crt"
-               tls_key_file = "/vault/userconfig/vault-secret/tls.key"
+               tls_disable = "true"
             }
             service_registration "kubernetes" {}
     # -- Extra volumes that are automatically mounted in the vault pod under /vault/userconfig/<name>
