@@ -19,6 +19,10 @@ vault:
     activeVaultPodOnly: false
 
   server:
+    topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: "topology.kubernetes.io/zone"
+        whenUnsatisfiable: ScheduleAnyway
     # -- Additional environment variables injected in the vault pod
     # -- Base configuration for the standalone vault server
     extraEnvironmentVars:
