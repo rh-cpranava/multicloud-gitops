@@ -49,10 +49,6 @@ vault:
     service:
       # -- Enables an associated k8s service when running the vault
       enabled: true
-      active:
-        # -- Annotation to inject a secret called `vault-secret` to the nonha service
-        annotations:
-          service.beta.openshift.io/serving-cert-secret-name: vault-secret-active
       nonha:
         # -- Annotation to inject a secret called `vault-secret` to the nonha service
         annotations:
