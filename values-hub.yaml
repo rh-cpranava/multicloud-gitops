@@ -62,17 +62,17 @@ clusterGroup:
           kind: ManagedClusterInfo
           jsonPointers:
             - /spec/loggingCA
-    # vault:
-    #   name: vault
-    #   namespace: vault
-    #   project: hub
-    #   path: charts/vault
     vault:
       name: vault
       namespace: vault
       project: hub
-      chart: hashicorp-vault
-      chartVersion: 0.1.*
+      path: charts/vault
+    # vault:
+    #   name: vault
+    #   namespace: vault
+    #   project: hub
+    #   chart: hashicorp-vault
+    #   chartVersion: 0.1.*
     golang-external-secrets:
       name: golang-external-secrets
       namespace: golang-external-secrets
